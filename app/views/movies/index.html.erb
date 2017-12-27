@@ -1,0 +1,28 @@
+<main role="main">
+ <section class="jumbotron text-center">
+   <div class="container">
+     <h1 class="jumbotron-heading">Watcha clone serice</h1>
+     <p class="lead text-muted">Recommend Movie Site</p>
+     <p>
+       <%= link_to "Post", posts_path, class: "btn btn-primary" %>
+       <%= link_to "Add movie", new_movie_path, class: "btn btn-secondary" if check_admin%>
+     </p>
+   </div>
+ </section>
+
+ <div class="album text-muted">
+   <div class="container">
+       <div class="row">
+
+        <% @movies.each do |movie| %>
+        <div class="card">
+         <img src="<%= movie.poster %>" alt="Card image cap" height="280px">
+         <p class= "card-title"><%= movie.average == 0 ? "평가가 없습니다" : movie.average.round(1) %> </p>
+         <a class="card-text" href="/movies/<%=movie.id%>"><%= movie.title  %></a>
+         </div>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
+</main>

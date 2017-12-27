@@ -1,0 +1,31 @@
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user.nickname %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<p>
+<%= form_tag("/posts/comment", method: :post) do %>
+  제목: <%= text_field_tag :title %><br>
+  코멘트 : <%= text_field_tag :content %><br>
+  <%= submit_tag "댓글달기" %>
+<% end %>
+</p>
+
+<div><%@post.comments.each do |comment| %>
+  <%= comment.title %>
+  <%= comment.content %>
+<% end %>
+</div>
