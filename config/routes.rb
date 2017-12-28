@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  post '/posts/comment' => 'posts#comment'
+  post '/posts/:id/comments' => 'posts#comments'
 
 
 

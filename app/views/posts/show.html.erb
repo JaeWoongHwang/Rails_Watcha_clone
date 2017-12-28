@@ -17,7 +17,7 @@
 <%= link_to 'Back', posts_path %>
 
 <p>
-<%= form_tag("/posts/comment", method: :post) do %>
+<%= form_tag("/posts/#{@post.id}/comments", method: :post) do %>
   제목: <%= text_field_tag :title %><br>
   코멘트 : <%= text_field_tag :content %><br>
   <%= submit_tag "댓글달기" %>
@@ -25,7 +25,10 @@
 </p>
 
 <div><%@post.comments.each do |comment| %>
-  <%= comment.title %>
-  <%= comment.content %>
-<% end %>
+    <li>
+    <%= comment.title %><br>
+    <%= comment.content %> |
+    <%= comment.user.email %><br>
+    </li>
+  <% end %>
 </div>

@@ -6,13 +6,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @post = Post.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
   end
 
   # GET /posts/new
@@ -66,7 +65,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def comment
+  def comments
     Comment.create(
       title: params[:title],
       content: params[:content],
