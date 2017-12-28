@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   # 로그인이 되지 않으면 게시판을 보지 못하는 before_action(devise에 내장됨)
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :privacy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -76,6 +76,9 @@ class PostsController < ApplicationController
 
   end
 
+  def privacy
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -84,6 +87,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :image)
     end
 end

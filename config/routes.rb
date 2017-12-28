@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get '/admin/index'
+  get '/admin/posts'
+  get '/admin/reviews'
+
+  put '/admin/posts_destroy/:id' => 'admin#posts_destroy'
+  put '/admin/reviews_destroy/:id' => 'admin#reviews_destroy'
+
+  put '/admin/to_manager/:id' => 'admin#to_manager'
+  put '/admin/to_user/:id' => 'admin#to_user'
+
+  # namespace :admin do
+  #   get '/users/index' => 'users#index'
+  # end
+
 
   resources :movies do
     member do

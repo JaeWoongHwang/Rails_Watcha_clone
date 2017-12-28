@@ -22,6 +22,40 @@ list.each do |movie|
   )
 end
 
+# 5.times do
+#   User.create(
+#     email: "asdf@asdf.com",
+#     password: "123123",
+#     password_confirmation: "123123",
+#     nickname: "heaven",
+#     role: "user"
+#   )
+# end
+
+  # User.create(
+  #   email: "admin@admin.com",
+  #   password: "123123",
+  #   password_confirmation: "123123",
+  #   nickname: "관리자",
+  #   role: "admin"
+  # )
+  #
+  #
+  # User.create(
+  #   email: "man@man.com",
+  #   password: "123123",
+  #   password_confirmation: "123123",
+  #   nickname: "매니저",
+  #   role: "manager"
+  # )
+  #
+  # User.create(
+  #   email: "user@user.com",
+  #   password: "123123",
+  #   password_confirmation: "123123",
+  #   nickname: "일반유저"
+  # )
+
 
 # Movie.create(
 #   title: movies["cards"][0]["items"][0]["item"]["title"],

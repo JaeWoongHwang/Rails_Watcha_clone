@@ -1,5 +1,6 @@
 class Movie < ActiveRecord::Base
   has_many :reviews
+  mount_uploader :poster, PhotoUploader
 
   def number
     # self는 객체 자신을 칭함

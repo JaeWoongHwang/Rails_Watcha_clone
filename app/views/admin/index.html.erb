@@ -1,0 +1,31 @@
+<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+     <h2>관리자 페이지</h2>
+     <h3>유저 현황</h3>
+     <div class="table-responsive">
+       <table class="table table-striped">
+         <thead>
+           <tr>
+             <th>#</th>
+             <th>Email</th>
+             <th>Nickname</th>
+             <th>Role</th>
+             <th>Change role</th>
+           </tr>
+         </thead>
+         <tbody>
+            <%@users.each do |user| %>
+           <tr>
+             <td><%=user.id %></td>
+             <td> <%=user.email %></td>
+             <td><%=user.nickname %></td>
+             <td><%=user.role %></td>
+             <td>
+                <%= link_to "매니저로", "/admin/to_manager/#{user.id}",  class: 'btn btn-primary', method: :put, data:{confirm: "진짜 매니저로 등급을 올리겠습니까?"} %>
+                <%= link_to "유저로", "/admin/to_user/#{user.id}", class: 'btn btn-primary', method: :put, data:{confirm: "진짜 유저로 등급을 내리겠습니까?"} %><br>
+             </td>
+           </tr>
+           <% end %>
+         </tbody>
+       </table>
+     </div>
+   </main>

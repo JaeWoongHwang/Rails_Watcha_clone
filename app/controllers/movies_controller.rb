@@ -41,4 +41,6 @@ class MoviesController < ApplicationController
 
   def destroy
   end
+
+
 end

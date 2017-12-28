@@ -36,3 +36,10 @@ Fake Watcha based on Rails
 - step 1_1. nickname 컬럼을 추가 함
 - step 2. 한글버전
 - step 3. View 수정 가능
+
+### 5. 사진 업로드 기능
+
+### 4. 관리자 페이지
+- 유저 역할을 구분한다
+- User model -> t.string :role, default: "user"
+- role = ["user", "manager", "admin"] 유저는 세 개의 역할군으로 나뉘어져 있다

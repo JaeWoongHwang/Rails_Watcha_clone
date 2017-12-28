@@ -1,0 +1,50 @@
+<div class="container-fluid">
+ <div class="row">
+   <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+     <ul class="nav nav-pills flex-column">
+       <li class="nav-item">
+         <a class="nav-link active" href="#">관리자 홈페이지 <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="/admin/index">유저관리</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="/admin/posts">게시판관리</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="/admin/reviews">리뷰관리</a>
+       </li>
+     </ul>
+
+   </nav>
+
+   <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+     <h2>리뷰 관리</h2>
+     <h3>리뷰 목록</h3>
+     <div class="table-responsive">
+       <table class="table table-striped">
+         <thead>
+           <tr>
+             <th>#</th>
+             <th>Comment</th>
+             <th>Rating</th>
+             <th>Status</th>
+           </tr>
+         </thead>
+         <tbody>
+            <%@reviews.each do |review| %>
+           <tr>
+             <td><%=review.id %></td>
+             <td><%=review.comment %></td>
+             <td><%=review.rating %></td>
+             <td>
+                <%= link_to "삭제", "/admin/reviews_destroy/#{review.id}", class: 'btn btn-primary', method: :put, data:{confirm: "정말로 삭제하시겠습니까?"} %>
+            </td>
+           </tr>
+           <% end %>
+         </tbody>
+       </table>
+     </div>
+   </main>
+ </div>
+</div>
