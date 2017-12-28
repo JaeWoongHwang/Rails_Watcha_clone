@@ -32,7 +32,7 @@ Fake Watcha based on Rails
 - 댓글(Model : Comment)
 
 ### 3. 유저 (User -> Devise)
-step 1_0. 관리자와 일반유저 분리
-step 1_1. nickname 컬럼을 추가 함
-step 2. 한글버전
-step 3. View 수정 가능
+- step 1_0. 관리자와 일반유저 분리
+- step 1_1. nickname 컬럼을 추가 함
+- step 2. 한글버전
+- step 3. View 수정 가능
